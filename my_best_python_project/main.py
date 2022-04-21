@@ -80,7 +80,8 @@ def main() -> None:
             print(f"Output: {repr(output_path)}", file=sys.stderr)
     else:
         print(
-            f"Error: File {repr(output_path)} exists. To overwrite, use `-o`.",
+            f"Error: File {repr(output_path)} exists. "
+            "To overwrite, use `--overwrite`.",
             file=sys.stderr,
         )
         exit(1)
