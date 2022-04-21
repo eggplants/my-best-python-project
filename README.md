@@ -14,6 +14,10 @@
   https://results.pre-commit.ci/badge/github/eggplants/my-best-python-project/master.svg
   )](
   https://results.pre-commit.ci/latest/github/eggplants/my-best-python-project/master
+) [![pages-build-deployment](
+  https://github.com/eggplants/my-best-python-project/actions/workflows/pages/pages-build-deployment/badge.svg
+  )](
+  https://github.com/eggplants/my-best-python-project/actions/workflows/pages/pages-build-deployment
 )
 
 This is a sample project.
