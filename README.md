@@ -80,6 +80,37 @@ import my_best_python_project
 print(my_best_python_project.__version__)
 ```
 
+### Docker
+
+To build docker image locally:
+
+```
+# build:
+curl 'https://raw.githubusercontent.com/eggplants/my-best-python-project/master/Dockerfile' | docker build -t eggplanter/mbpp -f-
+```
+
+To run:
+
+```shellsession
+$ docker run --rm -it eggplanter/mbpp
+This package's version is: 0.0.2
+
+$ docker run --rm -it eggplanter/mbpp -h
+usage: mbpp [-h] [-o PATH] [--overwrite] [-q] [-V]
+
+This command prints package's version.
+
+options:
+  -h, --help              show this help message and exit
+  -o PATH, --output PATH  output to file (default: None)
+  --overwrite             overwrite when using `-o` (default: False)
+  -q, --quiet             quiet mode (default: False)
+  -V, --version           show program's version number and exit
+
+note:
+    This package and tool is a sample.
+```
+
 ## Development
 
 To setup development environment:
