@@ -82,20 +82,21 @@ print(my_best_python_project.__version__)
 
 ### Docker
 
-To build docker image locally:
+To pull and rename:
 
-```
-# build:
-curl 'https://raw.githubusercontent.com/eggplants/my-best-python-project/master/Dockerfile' | docker build -t eggplanter/mbpp -f-
+```shellsession
+docker pull ghcr.io/eggplants/my-best-python-project
+docker tag ghcr.io/eggplants/my-best-python-project mbpp
+docker rmi ghcr.io/eggplants/my-best-python-project
 ```
 
 To run:
 
 ```shellsession
-$ docker run --rm -it eggplanter/mbpp
+$ docker run --rm -it mbpp -h
 This package's version is: 0.0.2
 
-$ docker run --rm -it eggplanter/mbpp -h
+$ docker run --rm -it mbpp -h
 usage: mbpp [-h] [-o PATH] [--overwrite] [-q] [-V]
 
 This command prints package's version.
