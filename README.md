@@ -64,7 +64,7 @@ $ mbpp -o test.txt
 Output: 'test.txt'
 
 $ mbpp -o test.txt
-Error: File 'test.txt' exists. To overwrite, use `-o`.
+Error: File 'test.txt' exists. To overwrite, use `--overwrite`.
 
 $ mbpp -o test.txt --overwrite
 Output: 'test.txt'
