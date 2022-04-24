@@ -128,7 +128,7 @@ To run pre-commit hooks manually:
 ```sh
 pre-commit run
 # or,
-pre-commit run --all-fileso
+pre-commit run --all-files
 ```
 
 ## Create release
