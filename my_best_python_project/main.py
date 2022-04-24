@@ -11,7 +11,8 @@ from . import __version__
 
 
 class MBBPHelpFormatter(
-    argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter
+    argparse.ArgumentDefaultsHelpFormatter,
+    argparse.RawDescriptionHelpFormatter,
 ):
     pass
 
@@ -30,7 +31,7 @@ def parse_args() -> argparse.Namespace:
         """
     note:
         This package and tool is a sample.
-    """
+    """,
     )
 
     parser = argparse.ArgumentParser(
@@ -48,14 +49,23 @@ def parse_args() -> argparse.Namespace:
         epilog=usage,
     )
     parser.add_argument(
-        "-o", "--output", type=check_out, help="output to file", metavar="PATH"
+        "-o",
+        "--output",
+        type=check_out,
+        help="output to file",
+        metavar="PATH",
     )
     parser.add_argument(
-        "--overwrite", action="store_true", help="overwrite when using `-o`"
+        "--overwrite",
+        action="store_true",
+        help="overwrite when using `-o`",
     )
     parser.add_argument("-q", "--quiet", action="store_true", help="quiet mode")
     parser.add_argument(
-        "-V", "--version", action="version", version=f"%(prog)s {__version__}"
+        "-V",
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
     )
     return parser.parse_args()
 

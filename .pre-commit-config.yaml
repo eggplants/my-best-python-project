@@ -9,13 +9,29 @@ repos:
       - id: check-merge-conflict
       - id: check-symlinks
       - id: check-yaml
+      - id: debug-statements
       - id: destroyed-symlinks
+      # - id: double-quote-string-fixer
       - id: end-of-file-fixer
         exclude: tests/test_changes/
         files: \.(py|sh|rst|yml|yaml)$
+      # - id: name-tests-test
       - id: mixed-line-ending
       - id: trailing-whitespace
         files: \.(py|sh|rst|yml|yaml)$
+      # - id: requirements-txt-fixer
+  - repo: https://github.com/asottile/setup-cfg-fmt
+    rev: v1.20.1
+    hooks:
+      - id: setup-cfg-fmt
+  - repo: https://github.com/asottile/add-trailing-comma
+    rev: v2.2.3
+    hooks:
+      - id: add-trailing-comma
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.32.0
+    hooks:
+      - id: pyupgrade
   - repo: https://github.com/psf/black
     rev: 22.3.0
     hooks:
