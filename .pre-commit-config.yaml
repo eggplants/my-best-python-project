@@ -50,7 +50,7 @@ repos:
         files: ^my-best-python-project/
         args: []
   - repo: https://github.com/crate-ci/typos
-    rev: 'typos-dict-v0.8.8'
+    rev: 'typos-v0.10.4'
     hooks:
       - id: typos
   - repo: https://github.com/codespell-project/codespell
