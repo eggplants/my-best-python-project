@@ -25,7 +25,7 @@ repos:
     hooks:
       - id: setup-cfg-fmt
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.37.3
+    rev: v2.38.0
     hooks:
       - id: pyupgrade
   - repo: https://github.com/psf/black
@@ -50,7 +50,7 @@ repos:
         files: ^my-best-python-project/
         args: []
   - repo: https://github.com/crate-ci/typos
-    rev: 'v1.12.4'
+    rev: 'typos-dict-v0.9.3'
     hooks:
       - id: typos
   - repo: https://github.com/codespell-project/codespell
