@@ -1,27 +1,27 @@
 # My best python project
 
 [![PyPI](
-  https://img.shields.io/pypi/v/my-best-python-project?color=blue
+  <https://img.shields.io/pypi/v/my-best-python-project?color=blue>
   )](
-  https://pypi.org/project/my-best-python-project/
+  <https://pypi.org/project/my-best-python-project/>
 ) [![Maintainability](
-  https://api.codeclimate.com/v1/badges/e6d94059d1dc7f08d2a4/maintainability
+  <https://api.codeclimate.com/v1/badges/e6d94059d1dc7f08d2a4/maintainability>
   )](
-  https://codeclimate.com/github/eggplants/my-best-python-project/maintainability
+  <https://codeclimate.com/github/eggplants/my-best-python-project/maintainability>
 ) [![Release Package](
-  https://github.com/eggplants/my-best-python-project/actions/workflows/release.yml/badge.svg
+  <https://github.com/eggplants/my-best-python-project/actions/workflows/release.yml/badge.svg>
   )](
-  https://github.com/eggplants/my-best-python-project/actions/workflows/release.yml
+  <https://github.com/eggplants/my-best-python-project/actions/workflows/release.yml>
 )
 
 [![pre-commit.ci status](
-  https://results.pre-commit.ci/badge/github/eggplants/my-best-python-project/master.svg
+  <https://results.pre-commit.ci/badge/github/eggplants/my-best-python-project/master.svg>
   )](
-  https://results.pre-commit.ci/latest/github/eggplants/my-best-python-project/master
+  <https://results.pre-commit.ci/latest/github/eggplants/my-best-python-project/master>
 ) [![pages-build-deployment](
-  https://github.com/eggplants/my-best-python-project/actions/workflows/pages/pages-build-deployment/badge.svg
+  <https://github.com/eggplants/my-best-python-project/actions/workflows/pages/pages-build-deployment/badge.svg>
   )](
-  https://github.com/eggplants/my-best-python-project/actions/workflows/pages/pages-build-deployment
+  <https://github.com/eggplants/my-best-python-project/actions/workflows/pages/pages-build-deployment>
 )
 
 This is a sample project.

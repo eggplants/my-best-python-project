@@ -1,32 +1,58 @@
+"""A module for CLI implementation."""
+
 from __future__ import annotations
 
-import argparse
-import os
 import shutil
 import sys
 import textwrap
-from typing import Optional, cast
+from argparse import (
+    ArgumentDefaultsHelpFormatter,
+    ArgumentParser,
+    ArgumentTypeError,
+    Namespace,
+    RawDescriptionHelpFormatter,
+)
+from pathlib import Path
 
 from . import __version__
 
 
 class MBBPHelpFormatter(
-    argparse.ArgumentDefaultsHelpFormatter,
-    argparse.RawDescriptionHelpFormatter,
+    ArgumentDefaultsHelpFormatter,
+    RawDescriptionHelpFormatter,
 ):
-    pass
+    """Custom formatter class."""
 
 
-def check_out(s: str | None) -> str | None:
+def check_out(s: str | None) -> Path | None:
+    """Check if output path is valid directory or not.
+
+    Args:
+        s (str | None): given argument.
+
+    Raises
+    ------
+        argparse.ArgumentTypeError: raise if it is invalid path.
+
+    Returns
+    -------
+        Path | None: valid path or None.
+    """
     if s is None:
         return None
-    elif os.path.isdir(s):
-        raise argparse.ArgumentTypeError(f"{repr(s)} is a dir.")
-    else:
-        return s
+    if Path(s).is_dir():
+        msg = f"{s!r} is a dir."
+        raise ArgumentTypeError(msg)
+    return Path(s)
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args() -> Namespace:
+    """Parse given commandline arguments.
+
+    Returns
+    -------
+        Namespace: argparse.Namespace
+    """
     usage = textwrap.dedent(
         """
     note:
@@ -34,16 +60,14 @@ def parse_args() -> argparse.Namespace:
     """,
     )
 
-    parser = argparse.ArgumentParser(
+    parser = ArgumentParser(
         prog="mbpp",
         description="This command prints package's version.",
         formatter_class=(
             lambda prog: MBBPHelpFormatter(
                 prog,
-                **{
-                    "width": shutil.get_terminal_size(fallback=(120, 50)).columns,
-                    "max_help_position": 40,
-                },
+                width=shutil.get_terminal_size(fallback=(120, 50)).columns,
+                max_help_position=40,
             )
         ),
         epilog=usage,
@@ -71,30 +95,30 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    """CLI main."""
     args = parse_args()
-    quiet = cast(bool, args.quiet)
-    overwrite = cast(bool, args.overwrite)
-    output_path = cast(Optional[str], args.output)
+    quiet: bool = args.quiet
+    overwrite: bool = args.overwrite
+    output_path: Path | None = args.output
 
-    contents = []
+    contents: list[str] = []
     if not quiet:
         contents.append("This package's version is:")
     contents.append(__version__)
     content = " ".join(contents)
 
     if output_path is None:
-        print(content)
-    elif not os.path.isfile(output_path) or overwrite:
-        print(content, file=open(output_path, "w"))
+        print(content)  # noqa: T201
+    elif not output_path.is_file() or overwrite:
+        print(content, file=output_path.open(mode="w"))
         if not quiet:
-            print(f"Output: {repr(output_path)}", file=sys.stderr)
+            print(f"Output: {output_path!r}", file=sys.stderr)  # noqa: T201
     else:
-        print(
-            f"Error: File {repr(output_path)} exists. "
-            "To overwrite, use `--overwrite`.",
+        print(  # noqa: T201
+            f"Error: File {output_path!r} exists. To overwrite, use `--overwrite`.",
             file=sys.stderr,
         )
-        exit(1)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
