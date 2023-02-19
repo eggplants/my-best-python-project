@@ -2,20 +2,14 @@
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core"]
+requires = [
+  "poetry-core",
+]
 
 [tool]
-
 [tool.black]
 line-length = 120
 target-version = ['py39']
-
-[tool.ruff]
-select = ["ALL"]
-ignore = []
-
-[tool.ruff.mccabe]
-max-complexity = 18
 
 [tool.isort]
 profile = "black"
@@ -25,6 +19,13 @@ pretty = true
 python_version = "3.9"
 show_error_codes = true
 strict = true
+
+[tool.ruff]
+select = ["ALL"]
+ignore = []
+
+[tool.ruff.mccabe]
+max-complexity = 18
 
 [tool.poetry]
 authors = ["eggplants <w10776e8w@yahoo.co.jp>"]
