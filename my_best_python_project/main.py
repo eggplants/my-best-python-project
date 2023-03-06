@@ -28,13 +28,14 @@ def check_out(s: str | None) -> Path | None:
     """Check if output path is valid directory or not.
 
     Args:
+    ----
         s (str | None): given argument.
 
-    Raises
+    Raises:
     ------
         argparse.ArgumentTypeError: raise if it is invalid path.
 
-    Returns
+    Returns:
     -------
         Path | None: valid path or None.
     """
