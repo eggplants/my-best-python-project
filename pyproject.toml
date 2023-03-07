@@ -54,8 +54,8 @@ version = "0.0.5"
 python = ">=3.9,<3.12"
 
 [tool.poetry.group.dev.dependencies]
-mypy = ">=0.991,<1.2"
-pre-commit = ">=2.20,<4.0"
+mypy = "^1.1.1"
+pre-commit = "^2.20.0"
 taskipy = "^1.10.3"
 
 [tool.poetry.scripts]
