@@ -22,10 +22,16 @@ strict = true
 
 [tool.ruff]
 select = ["ALL"]
-ignore = []
+ignore = [
+  "D203",
+  "D213",
+]
 
 [tool.ruff.mccabe]
 max-complexity = 18
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
 
 [tool.poetry]
 authors = ["eggplants <w10776e8w@yahoo.co.jp>"]

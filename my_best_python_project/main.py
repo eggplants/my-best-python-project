@@ -31,11 +31,11 @@ def check_out(s: str | None) -> Path | None:
     ----
         s (str | None): given argument.
 
-    Raises:
+    Raises
     ------
         argparse.ArgumentTypeError: raise if it is invalid path.
 
-    Returns:
+    Returns
     -------
         Path | None: valid path or None.
     """
