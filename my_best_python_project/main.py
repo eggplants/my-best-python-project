@@ -28,6 +28,7 @@ def check_out(s: str | None) -> Path | None:
     """Check if output path is valid directory or not.
 
     Args:
+    ----
         s (str | None): given argument.
 
     Raises
