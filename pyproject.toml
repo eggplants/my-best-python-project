@@ -22,10 +22,10 @@ packages = [{include = "my_best_python_project"}]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/eggplants/my-best-python-project"
-version = "0.0.5"
+version = "0.1.0"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.12"
+python = ">=3.9,<4"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.1.1"
