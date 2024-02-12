@@ -19,21 +19,26 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "GitHub.copilot",
-        "oderwat.indent-rainbow",
-        "GitHub.vscode-github-actions",
         "charliermarsh.ruff",
-        "ms-python.mypy-type-checker",
-        "ms-azuretools.vscode-docker",
         "exiasr.hadolint",
-        "timonwong.shellcheck",
         "foxundermoon.shell-format",
+        "GitHub.copilot",
+        "GitHub.vscode-github-actions",
+        "Gruntfuggly.todo-tree",
+        "ms-azuretools.vscode-docker",
+        "ms-python.black-formatter",
+        "ms-python.mypy-type-checker",
+        "oderwat.indent-rainbow",
+        "tamasfe.even-better-toml",
         "tekumara.typos-vscode",
-        "Gruntfuggly.todo-tree"
+        "timonwong.shellcheck"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "zsh",
-        "shellformat.flag": "-w -s -l -i 2"
+        "shellformat.flag": "-w -s -l -i 2",
+        "[python]": {
+          "editor.formatOnSave": true
+        }
       }
     }
   }

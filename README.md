@@ -61,13 +61,13 @@ $ mbpp -q
 0.0.1
 
 $ mbpp -o test.txt
-Output: 'test.txt'
+Output: File 'test.txt'
 
 $ mbpp -o test.txt
 Error: File 'test.txt' exists. To overwrite, use `--overwrite`.
 
 $ mbpp -o test.txt --overwrite
-Output: 'test.txt'
+Output: File 'test.txt'
 ```
 
 ### Library

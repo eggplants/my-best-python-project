@@ -42,12 +42,12 @@ def check_out(s: str | None) -> Path | None:
     if s is None:
         return None
     if Path(s).is_dir():
-        msg = f"{s!r} is a dir."
+        msg = f"File '{s}' is a dir."
         raise ArgumentTypeError(msg)
     return Path(s)
 
 
-def parse_args() -> Namespace:
+def parse_args(test_args: list[str] | None = None) -> Namespace:
     """Parse given commandline arguments.
 
     Returns
@@ -92,12 +92,15 @@ def parse_args() -> Namespace:
         action="version",
         version=f"%(prog)s {__version__}",
     )
-    return parser.parse_args()
+    if test_args is None:
+        return parser.parse_args()
+
+    return parser.parse_args(test_args)
 
 
-def main() -> None:
+def main(test_args: list[str] | None = None) -> None:
     """CLI main."""
-    args = parse_args()
+    args = parse_args(test_args)
     quiet: bool = args.quiet
     overwrite: bool = args.overwrite
     output_path: Path | None = args.output
@@ -113,10 +116,10 @@ def main() -> None:
     elif not output_path.is_file() or overwrite:
         print(content, file=output_path.open(mode="w"))
         if not quiet:
-            print(f"Output: {output_path!r}", file=sys.stderr)  # noqa: T201
+            print(f"Output: File '{output_path}'")  # noqa: T201
     else:
         print(  # noqa: T201
-            f"Error: File {output_path!r} exists. To overwrite, use `--overwrite`.",
+            f"Error: File '{output_path}' exists. To overwrite, use `--overwrite`.",
             file=sys.stderr,
         )
         sys.exit(1)

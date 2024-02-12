@@ -31,6 +31,8 @@ python = ">=3.9,<4"
 mypy = "^1.1.1"
 pre-commit = ">=2.20,<4.0"
 taskipy = "^1.10.3"
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
 
 [tool.poetry.scripts]
 mbpp = "my_best_python_project.main:main"
@@ -40,16 +42,26 @@ line-length = 120
 target-version = ['py39']
 
 [tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
 select = ["ALL"]
 ignore = [
   "D203",
   "D213",
 ]
 
-[tool.ruff.mccabe]
+[tool.ruff.lint.per-file-ignores]
+"tests/test_*.py" = [
+  "D",
+  "INP001", #  Add an `__init__.py`.
+  "S101", #    Use of assert detected
+]
+
+[tool.ruff.lint.mccabe]
 max-complexity = 18
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "numpy"
 
 [tool.isort]
@@ -64,5 +76,7 @@ strict = true
 [tool.poetry_bumpversion.file."my_best_python_project/__init__.py"]
 
 [tool.taskipy.tasks]
+test = "pytest --cov=my_best_python_project --cov-report=term"
+"test:ci" = "task test --cov-report=xml:cov.xml"
 lint = "pre-commit run -a"
 profile = "python -m cProfile"
