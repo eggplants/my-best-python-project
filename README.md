@@ -4,14 +4,24 @@
   <https://img.shields.io/pypi/v/my-best-python-project?color=blue>
   )](
   <https://pypi.org/project/my-best-python-project/>
-) [![Maintainability](
-  <https://api.codeclimate.com/v1/badges/e6d94059d1dc7f08d2a4/maintainability>
-  )](
-  <https://codeclimate.com/github/eggplants/my-best-python-project/maintainability>
 ) [![Release Package](
   <https://github.com/eggplants/my-best-python-project/actions/workflows/release.yml/badge.svg>
   )](
   <https://github.com/eggplants/my-best-python-project/actions/workflows/release.yml>
+)
+
+[![Maintainability](
+  <https://api.codeclimate.com/v1/badges/e6d94059d1dc7f08d2a4/maintainability>
+  )](
+  <https://codeclimate.com/github/eggplants/my-best-python-project/maintainability>
+) [![Test Coverage](
+  <https://api.codeclimate.com/v1/badges/e6d94059d1dc7f08d2a4/test_coverage>
+  )](
+  <https://codeclimate.com/github/eggplants/my-best-python-project/test_coverage>
+) [![Test](
+  <https://github.com/eggplants/my-best-python-project/actions/workflows/test.yml/badge.svg>
+  )](
+  <https://github.com/eggplants/my-best-python-project/actions/workflows/test.yml>
 )
 
 [![pre-commit.ci status](

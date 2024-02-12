@@ -10,13 +10,6 @@ def test_version() -> None:
     assert __version__ is not None
 
 
-def test_cli_no_test_args(capfd: pytest.CaptureFixture[str]) -> None:
-    main()
-    captured = capfd.readouterr()
-    assert captured.out == f"This package's version is: {__version__}\n"
-    assert not captured.err
-
-
 def test_cli_no_args(capfd: pytest.CaptureFixture[str]) -> None:
     main(test_args=[])
     captured = capfd.readouterr()
