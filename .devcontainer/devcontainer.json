@@ -31,7 +31,8 @@
         "oderwat.indent-rainbow",
         "tamasfe.even-better-toml",
         "tekumara.typos-vscode",
-        "timonwong.shellcheck"
+        "timonwong.shellcheck",
+        "-ms-python.vscode-pylance"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "zsh",
