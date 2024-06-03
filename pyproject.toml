@@ -4,19 +4,24 @@ requires = [
   "poetry-core",
 ]
 
-[tool]
 [tool.poetry]
-authors = ["eggplants <w10776e8w@yahoo.co.jp>"]
+authors = [
+  "eggplants <w10776e8w@yahoo.co.jp>",
+]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3 :: Only"
+  "Programming Language :: Python :: 3 :: Only",
 ]
 description = "My Best Python Project"
-keywords = ["sample-project"]
+keywords = [
+  "sample-project",
+]
 name = "my_best_python_project"
-packages = [{include = "my_best_python_project"}]
+packages = [
+  { include = "my_best_python_project" },
+]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/eggplants/my-best-python-project"
@@ -37,30 +42,27 @@ mbpp = "my_best_python_project.main:main"
 
 [tool.black]
 line-length = 120
-target-version = ['py39']
+target-version = [
+  'py39',
+]
 
 [tool.ruff]
 line-length = 120
 
-[tool.ruff.lint]
-select = ["ALL"]
-ignore = [
+lint.select = [
+  "ALL",
+]
+lint.ignore = [
   "D203",
   "D213",
 ]
-
-[tool.ruff.lint.per-file-ignores]
-"tests/test_*.py" = [
+lint.per-file-ignores."tests/test_*.py" = [
   "D",
   "INP001", #  Add an `__init__.py`.
-  "S101", #    Use of assert detected
+  "S101",   #    Use of assert detected
 ]
-
-[tool.ruff.lint.mccabe]
-max-complexity = 18
-
-[tool.ruff.lint.pydocstyle]
-convention = "numpy"
+lint.mccabe.max-complexity = 18
+lint.pydocstyle.convention = "numpy"
 
 [tool.isort]
 profile = "black"
@@ -70,6 +72,8 @@ pretty = true
 python_version = "3.9"
 show_error_codes = true
 strict = true
+
+[tool]
 
 [tool.poetry-version-plugin]
 source = "init"
