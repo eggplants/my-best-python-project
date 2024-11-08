@@ -129,7 +129,8 @@ note:
 To setup development environment:
 
 ```sh
-pip install -e ".[all]"
+poetry shell
+poetry install
 pre-commit install
 ```
 
