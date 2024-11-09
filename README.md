@@ -42,6 +42,8 @@ This is a sample project.
 pip install git+https://github.com/eggplants/my-best-python-project
 # or,
 pip install my-best-python-project
+# or, (use as CLI only)
+pipx install my-best-python-project
 ```
 
 ## Usage
