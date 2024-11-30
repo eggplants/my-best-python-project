@@ -64,9 +64,6 @@ lint.per-file-ignores."tests/test_*.py" = [
 lint.mccabe.max-complexity = 18
 lint.pydocstyle.convention = "numpy"
 
-[tool.isort]
-profile = "black"
-
 [tool.mypy]
 pretty = true
 python_version = "3.9"
