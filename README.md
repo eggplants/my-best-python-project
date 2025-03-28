@@ -128,20 +128,14 @@ note:
 
 ## Development
 
-To setup development environment:
+Open Dev Container with VSCode. Then:
 
 ```sh
-poetry shell
-poetry install
-pre-commit install
-```
+# test
+task test
 
-To run pre-commit hooks manually:
-
-```sh
-pre-commit run
-# or,
-pre-commit run --all-files
+# lint/format
+task lint
 ```
 
 ## Create release
@@ -149,9 +143,6 @@ pre-commit run --all-files
 To create release with GitHub Release and publish packages on PyPI and GitHub Container Registry:
 
 ```sh
-# update: `__version__` of `my_best_python_project/__init__.py`
-# commit
-git add . && git commit -m "update: <version>" && git push
 # tag
 git tag vX.Y.Z && git push --tags
 ```
