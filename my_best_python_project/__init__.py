@@ -1,5 +1,10 @@
-"""A sample package to describe my best project structure of Python for now."""
+""".. include:: ../README.md"""  # noqa: D415
 
 from __future__ import annotations
 
-__version__ = "0.1.1"
+import importlib.metadata
+
+try:
+    __version__ = importlib.metadata.version(__name__)
+except importlib.metadata.PackageNotFoundError:
+    __version__ = "0.0.0"

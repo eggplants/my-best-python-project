@@ -11,13 +11,13 @@
 )
 
 [![Maintainability](
-  <https://api.codeclimate.com/v1/badges/e6d94059d1dc7f08d2a4/maintainability>
+  <https://qlty.sh/badges/1f649cb7-41aa-4743-ad3f-3550f8ec029a/maintainability.svg>
   )](
-  <https://codeclimate.com/github/eggplants/my-best-python-project/maintainability>
-) [![Test Coverage](
-  <https://api.codeclimate.com/v1/badges/e6d94059d1dc7f08d2a4/test_coverage>
+  <https://qlty.sh/gh/eggplants/projects/my-best-python-project>
+) [![Code Coverage](
+  <https://qlty.sh/badges/1f649cb7-41aa-4743-ad3f-3550f8ec029a/test_coverage.svg>
   )](
-  <https://codeclimate.com/github/eggplants/my-best-python-project/test_coverage>
+  <https://qlty.sh/gh/eggplants/projects/my-best-python-project>
 ) [![Test](
   <https://github.com/eggplants/my-best-python-project/actions/workflows/test.yml/badge.svg>
   )](

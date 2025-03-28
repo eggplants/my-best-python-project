@@ -28,15 +28,12 @@ def check_out(s: str | None) -> Path | None:
     """Check if output path is valid directory or not.
 
     Args:
-    ----
         s (str | None): given argument.
 
-    Raises
-    ------
+    Raises:
         argparse.ArgumentTypeError: raise if it is invalid path.
 
-    Returns
-    -------
+    Returns:
         Path | None: valid path or None.
     """
     if s is None:
@@ -50,8 +47,7 @@ def check_out(s: str | None) -> Path | None:
 def parse_args(test_args: list[str] | None = None) -> Namespace:
     """Parse given commandline arguments.
 
-    Returns
-    -------
+    Returns:
         Namespace: argparse.Namespace
     """
     usage = textwrap.dedent(

@@ -1,21 +1,14 @@
 [build-system]
-build-backend = "poetry.core.masonry.api"
-requires = [
-  "poetry-core>=2",
-]
+build-backend = "hatchling.build"
+requires = [ "hatchling", "uv-dynamic-versioning" ]
 
 [project]
 name = "my-best-python-project"
-version = "0.1.1"
 description = "My Best Python Project"
 readme = "README.md"
-keywords = [
-  "sample-project",
-]
+keywords = [ "sample-project" ]
 license = { text = "MIT" }
-authors = [
-  { name = "eggplants", email = "w10776e8w@yahoo.co.jp" },
-]
+authors = [ { name = "eggplants", email = "w10776e8w@yahoo.co.jp" } ]
 requires-python = ">=3.9,<4"
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -28,36 +21,37 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Typing :: Typed",
 ]
-dependencies = [
-]
+dynamic = [ "version" ]
+dependencies = [  ]
+
 urls.repository = "https://github.com/eggplants/my-best-python-project"
 scripts.mbpp = "my_best_python_project.main:main"
 
-[tool.poetry]
-requires-poetry = ">=2.0"
-packages = [
-  { include = "my_best_python_project" },
+[dependency-groups]
+dev = [
+  "mypy>=1.1.1,<2",
+  "pre-commit>=2.20,<5",
+  "pytest>=8,<9",
+  "pytest-cov>=4.1,<7",
+  "taskipy>=1.10.3,<2",
 ]
+docs = [ "pdoc" ]
 
-[tool.poetry.group.dev.dependencies]
-mypy = "^1.1.1"
-pre-commit = ">=2.20,<5.0"
-taskipy = "^1.10.3"
-pytest = "^8.0.0"
-pytest-cov = ">=4.1,<7.0"
+[tool.hatch.version]
+# NOTE: tool.hatch.version.source is not listed in official schema.
+# https://github.com/ninoseki/uv-dynamic-versioning/issues/21
+source = "uv-dynamic-versioning"
 
-[tool.poetry.requires-plugins]
-poetry-plugin-shell = ">=1.0"
+[tool.hatch.build.targets.sdist]
+include = [ "my_best_python_project" ]
 
-[tool.black]
-line-length = 120
-target-version = [
-  'py39',
-]
+[tool.hatch.build.targets.wheel]
+include = [ "my_best_python_project" ]
 
 [tool.ruff]
 line-length = 120
-
+format.indent-style = "space"
+format.quote-style = "double"
 lint.select = [
   "ALL",
 ]
@@ -69,8 +63,7 @@ lint.per-file-ignores."tests/test_*.py" = [
   "D",
   "S101", # Use of assert detected
 ]
-lint.mccabe.max-complexity = 18
-lint.pydocstyle.convention = "numpy"
+lint.pydocstyle.convention = "google"
 
 [tool.mypy]
 pretty = true
@@ -78,8 +71,15 @@ python_version = "3.9"
 show_error_codes = true
 strict = true
 
+[tool.uv]
+default-groups = [
+  "dev",
+  "docs",
+]
+
 [tool.taskipy.tasks]
 test = "pytest --cov=my_best_python_project --cov-report=term"
 "test:ci" = "task test --cov-report=xml:cov.xml"
 lint = "pre-commit run -a"
 profile = "python -m cProfile"
+gendoc = "pdoc my_best_python_project -o ./docs --docformat google"
