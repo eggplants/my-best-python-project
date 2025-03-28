@@ -168,21 +168,14 @@ note:
 
 <h2 id="development">Development</h2>
 
-<p>To setup development environment:</p>
+<p>Open Dev Container with VSCode. Then:</p>
 
 <div class="pdoc-code codehilite">
-<pre><span></span><code>poetry<span class="w"> </span>shell
-poetry<span class="w"> </span>install
-pre-commit<span class="w"> </span>install
-</code></pre>
-</div>
+<pre><span></span><code><span class="c1"># test</span>
+task<span class="w"> </span><span class="nb">test</span>
 
-<p>To run pre-commit hooks manually:</p>
-
-<div class="pdoc-code codehilite">
-<pre><span></span><code>pre-commit<span class="w"> </span>run
-<span class="c1"># or,</span>
-pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
+<span class="c1"># lint/format</span>
+task<span class="w"> </span>lint
 </code></pre>
 </div>
 
@@ -191,10 +184,7 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 <p>To create release with GitHub Release and publish packages on PyPI and GitHub Container Registry:</p>
 
 <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="c1"># update: `__version__` of `my_best_python_project/__init__.py`</span>
-<span class="c1"># commit</span>
-git<span class="w"> </span>add<span class="w"> </span>.<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;update: &lt;version&gt;&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>push
-<span class="c1"># tag</span>
+<pre><span></span><code><span class="c1"># tag</span>
 git<span class="w"> </span>tag<span class="w"> </span>vX.Y.Z<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>--tags
 </code></pre>
 </div>
