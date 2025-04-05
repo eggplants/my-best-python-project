@@ -77,6 +77,11 @@ default-groups = [
   "docs",
 ]
 
+[tool.uv-dynamic-versioning]
+vcs = "git"
+style = "semver"
+fallback-version = "0.0.0"
+
 [tool.taskipy.tasks]
 test = "pytest --cov=my_best_python_project --cov-report=term"
 "test:ci" = "task test --cov-report=xml:cov.xml"
