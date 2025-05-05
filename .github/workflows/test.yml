@@ -28,7 +28,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - run: uv sync --all-extras --dev
     - run: uv run task test:ci
-    - uses: qltysh/qlty-action/coverage@0ed14654b5c1f2d8ec79e59fd70a78b19273baab
+    - uses: qltysh/qlty-action/coverage@2dbfb4f32d976eacc744c8121271a66395a30943
       with:
         token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
         files: ${{github.workspace}}/cov.xml
