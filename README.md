@@ -8,30 +8,10 @@
   <https://github.com/eggplants/my-best-python-project/actions/workflows/release.yml/badge.svg>
   )](
   <https://github.com/eggplants/my-best-python-project/actions/workflows/release.yml>
-)
-
-[![Maintainability](
-  <https://qlty.sh/badges/1f649cb7-41aa-4743-ad3f-3550f8ec029a/maintainability.svg>
+) [![CI](
+  <https://github.com/eggplants/my-best-python-project/actions/workflows/ci.yml/badge.svg>
   )](
-  <https://qlty.sh/gh/eggplants/projects/my-best-python-project>
-) [![Code Coverage](
-  <https://qlty.sh/badges/1f649cb7-41aa-4743-ad3f-3550f8ec029a/test_coverage.svg>
-  )](
-  <https://qlty.sh/gh/eggplants/projects/my-best-python-project>
-) [![Test](
-  <https://github.com/eggplants/my-best-python-project/actions/workflows/test.yml/badge.svg>
-  )](
-  <https://github.com/eggplants/my-best-python-project/actions/workflows/test.yml>
-)
-
-[![pre-commit.ci status](
-  <https://results.pre-commit.ci/badge/github/eggplants/my-best-python-project/master.svg>
-  )](
-  <https://results.pre-commit.ci/latest/github/eggplants/my-best-python-project/master>
-) [![pages-build-deployment](
-  <https://github.com/eggplants/my-best-python-project/actions/workflows/pages/pages-build-deployment/badge.svg>
-  )](
-  <https://github.com/eggplants/my-best-python-project/actions/workflows/pages/pages-build-deployment>
+  <https://github.com/eggplants/my-best-python-project/actions/workflows/ci.yml>
 )
 
 This is a sample project.
@@ -39,8 +19,6 @@ This is a sample project.
 ## Installation
 
 ```sh
-pip install git+https://github.com/eggplants/my-best-python-project
-# or,
 pip install my-best-python-project
 # or, (use as CLI only)
 pipx install my-best-python-project
@@ -122,29 +100,6 @@ options:
 
 note:
     This package and tool is a sample.
-```
-
----
-
-## Development
-
-Open Dev Container with VSCode. Then:
-
-```sh
-# test
-task test
-
-# lint/format
-task lint
-```
-
-## Create release
-
-To create release with GitHub Release and publish packages on PyPI and GitHub Container Registry:
-
-```sh
-# tag
-git tag vX.Y.Z && git push --tags
 ```
 
 ## License
