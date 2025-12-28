@@ -27,8 +27,6 @@
   <ul>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#development">Development</a></li>
-    <li><a href="#create-release">Create release</a></li>
     <li><a href="#license">License</a></li>
   </ul></li>
 </ul>
@@ -59,30 +57,16 @@ my_best_python_project    </h1>
 "><img src="https://img.shields.io/pypi/v/my-best-python-project?color=blue
   " alt="PyPI" /></a> <a href="https://github.com/eggplants/my-best-python-project/actions/workflows/release.yml
 "><img src="https://github.com/eggplants/my-best-python-project/actions/workflows/release.yml/badge.svg
-  " alt="Release Package" /></a></p>
-
-<p><a href="https://qlty.sh/gh/eggplants/projects/my-best-python-project
-"><img src="https://qlty.sh/badges/1f649cb7-41aa-4743-ad3f-3550f8ec029a/maintainability.svg
-  " alt="Maintainability" /></a> <a href="https://qlty.sh/gh/eggplants/projects/my-best-python-project
-"><img src="https://qlty.sh/badges/1f649cb7-41aa-4743-ad3f-3550f8ec029a/test_coverage.svg
-  " alt="Code Coverage" /></a> <a href="https://github.com/eggplants/my-best-python-project/actions/workflows/test.yml
-"><img src="https://github.com/eggplants/my-best-python-project/actions/workflows/test.yml/badge.svg
-  " alt="Test" /></a></p>
-
-<p><a href="https://results.pre-commit.ci/latest/github/eggplants/my-best-python-project/master
-"><img src="https://results.pre-commit.ci/badge/github/eggplants/my-best-python-project/master.svg
-  " alt="pre-commit.ci status" /></a> <a href="https://github.com/eggplants/my-best-python-project/actions/workflows/pages/pages-build-deployment
-"><img src="https://github.com/eggplants/my-best-python-project/actions/workflows/pages/pages-build-deployment/badge.svg
-  " alt="pages-build-deployment" /></a></p>
+  " alt="Release Package" /></a> <a href="https://github.com/eggplants/my-best-python-project/actions/workflows/ci.yml
+"><img src="https://github.com/eggplants/my-best-python-project/actions/workflows/ci.yml/badge.svg
+  " alt="CI" /></a></p>
 
 <p>This is a sample project.</p>
 
 <h2 id="installation">Installation</h2>
 
 <div class="pdoc-code codehilite">
-<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/eggplants/my-best-python-project
-<span class="c1"># or,</span>
-pip<span class="w"> </span>install<span class="w"> </span>my-best-python-project
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>my-best-python-project
 <span class="c1"># or, (use as CLI only)</span>
 pipx<span class="w"> </span>install<span class="w"> </span>my-best-python-project
 </code></pre>
@@ -163,31 +147,6 @@ options:
 note:
     This package and tool is a sample.
 </code></pre>
-
-<hr />
-
-<h2 id="development">Development</h2>
-
-<p>Open Dev Container with VSCode. Then:</p>
-
-<div class="pdoc-code codehilite">
-<pre><span></span><code><span class="c1"># test</span>
-task<span class="w"> </span><span class="nb">test</span>
-
-<span class="c1"># lint/format</span>
-task<span class="w"> </span>lint
-</code></pre>
-</div>
-
-<h2 id="create-release">Create release</h2>
-
-<p>To create release with GitHub Release and publish packages on PyPI and GitHub Container Registry:</p>
-
-<div class="pdoc-code codehilite">
-<pre><span></span><code><span class="c1"># tag</span>
-git<span class="w"> </span>tag<span class="w"> </span>vX.Y.Z<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>--tags
-</code></pre>
-</div>
 
 <h2 id="license">License</h2>
 
