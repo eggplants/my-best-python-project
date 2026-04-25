@@ -2,6 +2,7 @@
   "name": "Python",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers-extra/features/mise:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {
       "configureZshAsDefaultShell": true,
@@ -12,6 +13,9 @@
     }
   },
   "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "mounts": [
+    "source=${localEnv:HOME}/.config/gh,target=/home/vscode/.config/gh,type=bind,consistency=cached"
+  ],
   "remoteUser": "vscode",
   "containerUser": "vscode",
   "customizations": {
@@ -31,7 +35,7 @@
       "settings": {
         // Python
         "python.testing.pytestEnabled": true,
-        "python.defaultInterpreterPath": "./.venv/bin/python",
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python",
         "python-envs.alwaysUseUv": true,
         "[python]": {
           "editor.formatOnSave": true,
@@ -58,7 +62,6 @@
       }
     }
   },
-  "mounts": [],
   "containerEnv": {},
   "remoteEnv": {}
 }

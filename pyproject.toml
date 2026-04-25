@@ -44,6 +44,7 @@ build.targets.wheel.include = [ "my_best_python_project" ]
 version.source = "uv-dynamic-versioning"
 
 [tool.uv]
+python-downloads = "never"
 default-groups = [
   "dev",
   "docs",
