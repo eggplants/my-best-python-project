@@ -7,7 +7,7 @@ name = "my-best-python-project"
 description = "My Best Python Project"
 readme = "README.md"
 keywords = [ "sample-project" ]
-license = { text = "MIT" }
+license = "MIT"
 authors = [ { name = "eggplants", email = "w10776e8w@yahoo.co.jp" } ]
 requires-python = ">=3.10,<4"
 classifiers = [
@@ -22,8 +22,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 dynamic = [ "version" ]
-dependencies = [  ]
-
+dependencies = []
 urls.repository = "https://github.com/eggplants/my-best-python-project"
 scripts.mbpp = "my_best_python_project.main:main"
 
@@ -39,22 +38,18 @@ docs = [
   "pdoc>=16",
 ]
 
-[tool.hatch.version]
-source = "uv-dynamic-versioning"
-
-[tool.hatch.build.targets.sdist]
-include = [ "my_best_python_project" ]
-
-[tool.hatch.build.targets.wheel]
-include = [ "my_best_python_project" ]
+[tool.hatch]
+build.targets.sdist.include = [ "my_best_python_project" ]
+build.targets.wheel.include = [ "my_best_python_project" ]
+version.source = "uv-dynamic-versioning"
 
 [tool.uv]
-preview = true
 default-groups = [
   "dev",
   "docs",
 ]
 exclude-newer = "P7D"
+preview = true
 
 [tool.ruff]
 line-length = 120
