@@ -39,9 +39,9 @@ docs = [
 ]
 
 [tool.hatch]
-build.targets.sdist.include = [ "my_best_python_project" ]
-build.targets.wheel.include = [ "my_best_python_project" ]
 version.source = "uv-dynamic-versioning"
+build.targets.wheel.include = [ "my_best_python_project" ]
+build.targets.sdist.include = [ "my_best_python_project" ]
 
 [tool.uv]
 python-downloads = "never"
