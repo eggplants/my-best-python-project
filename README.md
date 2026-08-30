@@ -1,3 +1,9 @@
+# Archived
+
+See: <https://github.com/eggplants/cookiecutter-python>
+
+---
+
 # My best python project
 
 [![PyPI](
